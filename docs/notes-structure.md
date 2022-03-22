@@ -2,9 +2,13 @@
 
 É mais uma divisão por responsabilidade em vez de um padrão de projeto!
 
+A API do javascript muda entre frontend e backend.
+
 ## Frontend 😮
 
 - [public directory](./public/)
+
+A API do frontend é a api do browser, que é **"window"**.
 
 - **assets**: Diretório para artefatos estáticos.
 - **css**: Diretório para estilos.
@@ -15,6 +19,8 @@
   - **home**: Page principal, tela de usuário para player.
 
 ## Backend 🧰
+
+A API do backend é a api do **node**.
 
 - [server directory](./server/)
 

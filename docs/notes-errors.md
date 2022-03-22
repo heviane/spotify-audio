@@ -1,8 +1,8 @@
 # ERRORS 🟥
 
-- listen EADDRINUSE: address already in use
+## listen EADDRINUSE: address already in use
 
-## Processos do Node
+- **Solution**: Matar processos do Node.
 
 ```bash
     #!/bin/bash
@@ -19,3 +19,5 @@
     ## Mata todos os processos que estiverem usando a porta 3000
     kill $(lsof -t -i:3000)
 ```
+
+## asset not found Error: ENOENT: no such file or directory, access '/home/heviane/Github/spotify-audio/public/audio/songs/conversation.mp3'

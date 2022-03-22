@@ -16,6 +16,18 @@
 
 ```
 
+## Debugging
+
+- Marcar as linhas onde serão os breakpoints
+- Parar o servidor
+- Abrir a index.js (Responsável por subir o servidor)
+- Executar F5 (Run and debug) para entrar em modo DEBUG
+- Ir dando play a cada breakpoint
+- Visualizar
+  - Visualizar na linha do **breakpoint** (Passar mouse por cima da parte amarelada)
+  - Visualizar o **Debug Console**
+  - Visualizar na aba **"Run and Debug"**
+
 ## References ✅
 
 - [https://curl.se](https://curl.se)

@@ -54,6 +54,7 @@ async function routes(req, res){
         const { 
             stream, type
         } = await controller.getFileStream(url);
+        
         const contentType = CONTENT_TYPE[type];
         if(contentType){
             res.writeHead(200, {

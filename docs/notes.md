@@ -4,7 +4,7 @@ Frontend e Backend juntos, geralmente se divide em projetos separados.
 
 O layout é ficticio, será implementado apenas o player.
 
-pause in 1h12min...Jest Installation
+pause in 1h23min...Implementação dos testes
 
 ## Requeriments ✅
 
