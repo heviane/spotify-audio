@@ -1,0 +1,35 @@
+{
+  "name": "spotify-audio",
+  "version": "1.0.0",
+  "description": "Transmissão de audio sob demanda em tempo real com inclusão de efeitos",
+  "type": "module",
+  "engines": {
+    "node": "17"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server/index.js",
+    "live-reload": "nodemon ./server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heviane/spotify-audio.git"
+  },
+  "keywords": [
+    "Node",
+    "streams"
+  ],
+  "author": "Heviane Bastos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heviane/spotify-audio/issues"
+  },
+  "homepage": "https://github.com/heviane/spotify-audio#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "pino": "^7.8.0",
+    "pino-pretty": "^7.5.3"
+  }
+}
