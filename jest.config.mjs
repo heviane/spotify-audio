@@ -14,23 +14,23 @@ export default {
 	projects: [
 		// Suíte para Frontend
 		{
-			...defaultConfig, // Para copiar todas as configurações
-			testEnvironment: "jsdom", // Para a api do browser
+			...defaultConfig, // Copiar todas as configurações
+			testEnvironment: "jsdom", // Api do browser (window)
 			displayName: "frontend",
 			collectCoverageFrom: ["public/"],
-			TransformIgnorePatterns: [...defaultConfig.TransformIgnorePatterns,
-				"server/"/*Ignorar pq é backend*/],
+			TransformIgnorePatterns: [
+				...defaultConfig.TransformIgnorePatterns,"server/"],
 			testMath: ["**/tests/**/public/**/*.test.js"]
 		},
 		// Suíte para Backend
 		{
-			...defaultConfig, // Para copiar todas as configurações
-			testEnvironment: "node", // Para a api do node
+			...defaultConfig,
+			testEnvironment: "node", // Api do node
 			displayName: "backend",
-			collectCoverageFrom: ["server/","!server/index.js"/*Infraestrutura*/],
-			TransformIgnorePatterns: [...defaultConfig.TransformIgnorePatterns,
-				"public/"/*Ignorar pq é frontend*/],
+			collectCoverageFrom: ["server/","!server/index.js"],
+			TransformIgnorePatterns: [
+				...defaultConfig.TransformIgnorePatterns,"public/"],
 			testMath: ["**/tests/**/server/**/*.test.js"]
-		}
+		},
 	]
 };

@@ -1,8 +1,8 @@
-import {expect, describe, test} from '@jest/globals';
+import {describe, test, expect} from '@jest/globals';
 
-describe('RoutesFrontend', () => {
+describe('Routes - Frontend', () => {
 
-    test('myTest', () => {
-        expect(true).toBeTruthy();
+    test('Test the suites before implementing the tests', () => { 
+        expect(true).toBeTruthy(); // true = passed and false = failed
     });
 });

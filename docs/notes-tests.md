@@ -1,5 +1,12 @@
 # Tests
 
+Não fizemos TDD, porque fizemos os testes depois das implementações.
+
+- **TDD (Test-driven development)**: O _desenvolvimento orientado a testes_ é um processo de desenvolvimento de software baseado em requisitos de software sendo convertidos em casos de teste antes que o software seja totalmente desenvolvido e rastreando todo o desenvolvimento de software testando repetidamente o software em todos os casos de teste.
+  - Passo 1: Fase vermelha, escreva um teste.
+  - Passo 3: Fase azul, refatorar.
+  - Passo 5: Fase verde, faça o teste passar.
+
 ## Testing from the command line 🚧
 
 ```bash
@@ -13,7 +20,6 @@
     ## POST
     curl -X POST -i localhost:3000 # header
     curl -X POST localhost:3000    # body
-
 ```
 
 ## Debugging
