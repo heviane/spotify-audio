@@ -23,7 +23,7 @@ async function routes(req, res){
     // rota "/" = Redirecionamento para rota "/home"
     if(method === 'GET' && url === '/'){
         res.writeHead(302, {
-            'location': location.home
+            'Location': location.home
         });
         return res.end();
     }

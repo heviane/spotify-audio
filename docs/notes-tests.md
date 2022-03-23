@@ -7,6 +7,12 @@ Não fizemos TDD, porque fizemos os testes depois das implementações.
   - Passo 3: Fase azul, refatorar.
   - Passo 5: Fase verde, faça o teste passar.
 
+## Tipos de Testes
+
+- **Unit Test**: Sempre off-line, sem nenhuma dependência, ex: infraestrutura, internet, SO, BD, outras apps, etc.
+Teste realizado do ponto de vista do código.
+- **Teste End To End** ou **Teste de Integração** ou **Teste Funcional**: Teste com duas ou mais funcionalidades, iteração entre elas, etc.
+
 ## Testing from the command line 🚧
 
 ```bash
