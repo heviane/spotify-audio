@@ -6,6 +6,7 @@ O layout é ficticio, será implementado apenas o player.
 
 **Último Commit**: Test planning with todo()
 pause in 1h43min...Primeiro teste implementado (GET /)
+pause in 1h48min...Segundo teste implementado (GET /home)
 
 ## Requeriments ✅
 
