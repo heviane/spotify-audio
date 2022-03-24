@@ -4,9 +4,19 @@ Frontend e Backend juntos, geralmente se divide em projetos separados.
 
 O layout é ficticio, será implementado apenas o player.
 
-Aula 01 = OK
-Aula 02 =
-Aula 03 =
+- **Aula 01**: OK
+  - Criar a estrutura do backend
+  - Criar o servidor **server.js** e a infraestrutura **index.js**
+  - Criar a entrega estática de de arquivos para o cliente com node streams
+  - Criar o tratamento para erros na API
+  - Criar os testes com 100% de cobertura para o **routes.js**
+
+- **Aula 02**: OK
+  - Preparar os audios para serem editados
+  - Fazer a stream do audio para o cliente
+  - Iniciar a implementação do controle de transmissão
+
+- **Aula 03**: OK
 
 **Últimos commits**:
 
