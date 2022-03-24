@@ -10,7 +10,7 @@ import {Controller} from '../../../server/controller.js';
 import {handler} from '../../../server/routes.js';
 import TestUtil from '../_util/testUtil.js';
 
-const { pages, location } = config;
+const { pages, location, constants: { CONTENT_TYPE } } = config;
 
 // Describe test responsibility
 describe('Routes - Test suíte for api response', () => {
@@ -113,5 +113,64 @@ describe('Routes - Test suíte for api response', () => {
             //expect(Controller.prototype.getFileStream).toBeCalledWith(pages.controllerHTML+'1'); // Failed
             expect(mockFileStream.pipe).toHaveBeenCalledWith(parms.res);
         });
+
+        /* Para o static files são 2 testes: um que bate no if e outro que não bate no if */
+
+        // static files que bate no if (enviado type)
+        // Valida se foi retornado um stream, se foi chamado com o pipe(), e o tipo de arquivo
+        test(`GET /index.html - Should response with file stream`, async () => {
+            const parms = TestUtil.defaultHandleParams();
+            const filename = '/index.html'; // Pega o path, por isso precisa da barra 
+            parms.req.method ='GET';
+            parms.req.url = filename;
+            const expectedType = '.html';
+            const mockFileStream = TestUtil.generateReadableStream(['data']); 
+            jest.spyOn(
+                Controller.prototype,
+                Controller.prototype.getFileStream.name, // Precisa do nome da função
+            ).mockResolvedValue({
+                stream: mockFileStream, // objeto stream
+                type: expectedType
+            })
+            jest.spyOn(
+                mockFileStream,
+                "pipe", //mockFileStream.pipe.name, ** Esta função não tem name **
+            ).mockReturnValue();
+            await handler(...parms.values());
+            expect(Controller.prototype.getFileStream).toBeCalledWith(filename); // Passed
+            //expect(Controller.prototype.getFileStream).toBeCalledWith(filename+'1'); // Failed
+            expect(mockFileStream.pipe).toHaveBeenCalledWith(parms.res);
+            // O type que vier tem que ser igual a um dos que estiver no config
+            expect(parms.res.writeHead).toHaveBeenCalledWith(200, {'Content-Type': CONTENT_TYPE[expectedType]});
+        });
+        // static files que NÃO bate no if (sem type)
+        test(`GET /file.ext - Should response with file stream`, async () => {
+            const parms = TestUtil.defaultHandleParams();
+            const filename = '/file.ext'; 
+            parms.req.method ='GET';
+            parms.req.url = filename;
+            const expectedType = '.ext';
+            const mockFileStream = TestUtil.generateReadableStream(['data']); 
+            jest.spyOn(
+                Controller.prototype,
+                Controller.prototype.getFileStream.name, // Precisa do nome da função
+            ).mockResolvedValue({
+                stream: mockFileStream, // objeto stream
+                type: expectedType
+            })
+            jest.spyOn(
+                mockFileStream,
+                "pipe", //mockFileStream.pipe.name, ** Esta função não tem name **
+            ).mockReturnValue();
+            await handler(...parms.values());
+            expect(Controller.prototype.getFileStream).toBeCalledWith(filename); // Passed
+            //expect(Controller.prototype.getFileStream).toBeCalledWith(filename+'1'); // Failed
+            expect(mockFileStream.pipe).toHaveBeenCalledWith(parms.res);
+            // Não vai ser chamado porque não tem o content-type
+            expect(parms.res.writeHead).not.toHaveBeenCalled();
+        });
         // 
+        test(`GET /unknown - Given an inexistent route it should response with 404`, async () => {
+            
+        });
 });
