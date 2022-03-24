@@ -4,15 +4,11 @@ Frontend e Backend juntos, geralmente se divide em projetos separados.
 
 O layout é ficticio, será implementado apenas o player.
 
-**Último Commit**: Test planning with todo()
-First test implemented (GET /)
-Second test implemented (GET /home)
-Third test implemented (GET /controller)
-Fourth test implemented (GET /index.html) // static files
-Fifth test implemented (GET /unknown) // 404
-Sixth test implemented (Exceptions // 404 e 500
+Aula 01 = OK
+Aula 02 =
+Aula 03 =
 
-pause in 1h55min50s...
+**Últimos commits**:
 
 ## Requeriments ✅
 
@@ -44,7 +40,6 @@ pause in 1h55min50s...
 
     # Executar o script "start"
     npm start
-    
 ```
 
 ## [Nodemon](https://nodemon.io) Installation
