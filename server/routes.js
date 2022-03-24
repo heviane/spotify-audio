@@ -69,7 +69,8 @@ async function routes(req, res){
 
 function handleError(error, res){
     if(error.message.includes('ENOENT')){
-        logger.warn(`asset not found ${error.stack}`);
+        logger.warn(`asset not found ${error.stack}`); // Causa erro nos testes
+        console.log(`asset not found ${error.stack}`); // NÃO causa erro nos testes, apenas suja o ambiente
         res.writeHead(404); // Not found
         return res.end();
     }

@@ -45,6 +45,15 @@
     },
 
     npm run test:coverage
+
+    # Pino (logs) causa erros na execução dos testes
+    ## Solution: usar variável de ambiente "LOG_DISABLED" criada no file "util.js" 
+    ## Inclui-lá no script do file "package.json"
+    ### console.log() continua funcionando normalmente, somente pino que fica desabilitado
+    "scripts": {
+        "test": "LOG_DISABLED=true NODE_OPTIONS=--experimental-vm-modules jest --no-cache"
+    },
+
 ```
 
 ## References ✅

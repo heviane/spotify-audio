@@ -169,8 +169,54 @@ describe('Routes - Test suíte for api response', () => {
             // Não vai ser chamado porque não tem o content-type
             expect(parms.res.writeHead).not.toHaveBeenCalled();
         });
-        // 
-        test(`GET /unknown - Given an inexistent route it should response with 404`, async () => {
+        // Valida quando recurso não é encontrado (404)
+        test(`POST /unknown - Given an inexistent route it should response with 404`, async () => {
+            const parms = TestUtil.defaultHandleParams();
+            parms.req.method ='POST';
+            parms.req.url = '/unknown';
+            const mockFileStream = TestUtil.generateReadableStream(['data']); 
             
+            await handler(...parms.values());
+            expect(parms.res.writeHead).toHaveBeenCalledWith(404);
+            expect(parms.res.end).toHaveBeenCalled();
+        });
+
+        describe('Exceptions', () => {
+            // A rota tem que ser existente, mas o file não pode existir
+            // A service vai estourar um error em fsPromises.access()
+            // Esperado que o getFileInfo rejeite o resultado
+            test('Given an inexistent file it should response with 404', async () => {
+                const parms = TestUtil.defaultHandleParams();
+                parms.req.method ='GET';
+                parms.req.url = '/teste.png';
+                const mockFileStream = TestUtil.generateReadableStream(['data']); 
+                // mock = function handleError() = Primeiro if = if(error.message.includes('ENOENT'))
+                jest.spyOn(
+                    Controller.prototype,
+                    Controller.prototype.getFileStream.name, // Precisa do nome da função
+                // Ele vai rejeitar e dar um erro    
+                ).mockRejectedValue(new Error('Error: ENOENT: no such file or directory, open \'teste.png\''));
+                
+                await handler(...parms.values());
+                expect(parms.res.writeHead).toHaveBeenCalledWith(404);
+                expect(parms.res.end).toHaveBeenCalled();
+            });
+            // 
+            test('Given an error file it should respone with 500', async () => {
+                const parms = TestUtil.defaultHandleParams();
+                parms.req.method ='GET';
+                parms.req.url = '/teste.png';
+                const mockFileStream = TestUtil.generateReadableStream(['data']); 
+                // mock = function handleError() = Não cai no if do erro 404
+                jest.spyOn(
+                    Controller.prototype,
+                    Controller.prototype.getFileStream.name, // Precisa do nome da função
+                // Ele vai rejeitar qualquer coisa  
+                ).mockRejectedValue(new Error('Error:'));
+                
+                await handler(...parms.values());
+                expect(parms.res.writeHead).toHaveBeenCalledWith(500);
+                expect(parms.res.end).toHaveBeenCalled();
+            });
         });
 });

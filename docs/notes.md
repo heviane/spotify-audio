@@ -9,6 +9,8 @@ First test implemented (GET /)
 Second test implemented (GET /home)
 Third test implemented (GET /controller)
 Fourth test implemented (GET /index.html) // static files
+Fifth test implemented (GET /unknown) // 404
+Sixth test implemented (Exceptions // 404 e 500
 
 pause in 1h55min50s...
 
