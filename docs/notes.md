@@ -5,8 +5,11 @@ Frontend e Backend juntos, geralmente se divide em projetos separados.
 O layout é ficticio, será implementado apenas o player.
 
 **Último Commit**: Test planning with todo()
-pause in 1h43min...Primeiro teste implementado (GET /)
-pause in 1h48min...Segundo teste implementado (GET /home)
+Primeiro teste implementado (GET /) - OK
+Segundo teste implementado (GET /home) - OK
+Terceiro teste implementado (GET /controller) - OK
+
+pause in 1h49min53s...
 
 ## Requeriments ✅
 

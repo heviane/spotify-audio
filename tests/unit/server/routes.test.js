@@ -37,7 +37,7 @@ describe('Routes - Test suíte for api response', () => {
         // });
     
     /*---------------- Test implementation ----------------*/
-        // Aqui não manipulamos streams pq este endpoint apenas redireciona
+        // Não manipulamos streams pq este endpoint apenas redireciona
         test('GET / - Should redirect to home page', async () => {
             const parms = TestUtil.defaultHandleParams();
             parms.req.method ='GET';
@@ -51,7 +51,7 @@ describe('Routes - Test suíte for api response', () => {
             expect(parms.res.writeHead).toBeCalledWith(302,{'Location': location.home});
             expect(parms.res.end).toHaveBeenCalled();
         });
-        // Aqui validamos se foi retornado um stream, se foi chamado com o pipe() e pelo home
+        // Valida se foi retornado um stream, se foi chamado com o pipe() e pelo home
         test(`GET /home - Should response with ${pages.homeHTML} file stream`, async () => {
             const parms = TestUtil.defaultHandleParams();
             parms.req.method ='GET';
@@ -91,4 +91,27 @@ describe('Routes - Test suíte for api response', () => {
             expect(mockFileStream.pipe).toHaveBeenCalledWith(parms.res);
             // expect(parms.res.end).toHaveBeenCalled(); // Neste caso, não vai ser chamado...
         });
+        // Valida se foi retornado um stream, se foi chamado com o pipe() e pelo controller
+        test(`GET /controller - Should response with ${pages.controllerHTML} file stream`, async () => {
+            const parms = TestUtil.defaultHandleParams();
+            parms.req.method ='GET';
+            parms.req.url = '/controller';
+            const mockFileStream = TestUtil.generateReadableStream(['data']); 
+            jest.spyOn(
+                Controller.prototype,
+                Controller.prototype.getFileStream.name, // Precisa do nome da função
+            ).mockResolvedValue({
+                stream: mockFileStream, // objeto stream
+                type: ''
+            })
+            jest.spyOn(
+                mockFileStream,
+                "pipe", //mockFileStream.pipe.name, ** Esta função não tem name **
+            ).mockReturnValue();
+            await handler(...parms.values());
+            expect(Controller.prototype.getFileStream).toBeCalledWith(pages.controllerHTML); // Passed
+            //expect(Controller.prototype.getFileStream).toBeCalledWith(pages.controllerHTML+'1'); // Failed
+            expect(mockFileStream.pipe).toHaveBeenCalledWith(parms.res);
+        });
+        // 
 });
