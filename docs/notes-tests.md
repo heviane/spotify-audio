@@ -7,11 +7,12 @@ Não fizemos TDD, porque fizemos os testes depois das implementações.
   - Passo 3: Fase azul, refatorar.
   - Passo 5: Fase verde, faça o teste passar.
 
-## Tipos de Testes
+## Types of Tests
 
-- **Unit Test**: Sempre off-line, sem nenhuma dependência, ex: infraestrutura, internet, SO, BD, outras apps, etc.
-Teste realizado do ponto de vista do código.
-- **Teste End To End** ou **Teste de Integração** ou **Teste Funcional**: Teste com duas ou mais funcionalidades, iteração entre elas, etc.
+- **Unit Test**: Sempre off-line e sem dependências (infraestrutura, internet, SO, BD, App, etc.)
+É um teste realizado do ponto de vista do código.
+
+- **e2e Test (Integration/Functional)**: Iteração, comunicação entre apps, funcionalidades.
 
 ## Testing from the command line 🚧
 

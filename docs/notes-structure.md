@@ -1,8 +1,10 @@
 # Project Structure 📑
 
-É mais uma divisão por responsabilidade em vez de um padrão de projeto!
+Estruturação do projeto em camadas de forma reutilizável.
 
-A API do javascript muda entre frontend e backend.
+É mais uma divisão por responsabilidade do que um padrão de projeto.
+
+Frontend e Backend dentro do mesmo projeto.
 
 ## Frontend 😮
 

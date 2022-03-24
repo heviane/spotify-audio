@@ -1,8 +1,4 @@
-# Tests with Jest
-
-- **router.js** implementado na aula.
-- **service.js** challenge.
-- **controller.js** challenge.
+# Tests with Jest 🧪
 
 ## [Jest](https://jestjs.io) 🚧
 

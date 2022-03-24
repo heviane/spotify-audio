@@ -5,26 +5,29 @@ Frontend e Backend juntos, geralmente se divide em projetos separados.
 O layout é ficticio, será implementado apenas o player.
 
 - **Aula 01**: OK
-  - Criar a estrutura do backend
-  - Criar o servidor **server.js** e a infraestrutura **index.js**
-  - Criar a entrega estática de de arquivos para o cliente com node streams
-  - Criar o tratamento para erros na API
-  - Criar os testes com 100% de cobertura para o **routes.js**
+  - Estruturação do projeto em camadas de forma reutilizável
+  - Criaçção do servidor **server.js** e da infraestrutura **index.js**
+  - Criação de entrega estática de de arquivos para o cliente com node streams
+  - Criação de tratamento para erros na API
+  - Criação de testes unitários com 100% de cobertura para as rotas
 
 - **Aula 02**: OK
+  - Converter a app para trabalhar com docker
   - Preparar os audios para serem editados
-  - Fazer a stream do audio para o cliente
+  - Processar audio sob demanda em stream para o cliente
   - Iniciar a implementação do controle de transmissão
+  - Implementar testes e2e (integração) no backend
+  - Implementar testes unitários no frontend
 
 - **Aula 03**: OK
-
-**Últimos commits**:
+  - Deploy in Heroku with docker
 
 ## Requeriments ✅
 
 - [Node](https://nodejs.org)
 - [Pino](https://getpino.io)
 - [Jest](https://jestjs.io)
+- [Docker](https://www.docker.com)
 
 ## Project Startup 🚧
 
