@@ -1,5 +1,6 @@
 /* Layer: Presentation, responsible for route management */
-import { pipeline } from 'stream';
+import {pipeline} from 'stream';
+import {once} from 'events'; // req e res são streams
 import config from './config.js';
 import {Controller} from './controller.js';
 import {logger} from './util.js';
@@ -69,6 +70,16 @@ async function routes(req, res){
             Sem interrupção. */
         return stream.pipe(res);
     }
+
+    // POST porque queremos um comando propriamente dito
+    // controller porque vai ter a outra page, a q vai inicializar
+    if(method === 'POST' && url === '/controller'){
+        const data = await once(req, 'data'); // Obter dados do request 
+        const item = JSON.parse(data); // Transformar JSON em objeto
+        const result = await controller.handleCommand(item);
+        res.end(JSON.stringify(result));// Sempre retornar string aqui
+    }
+
     // static files
     if(method === 'GET'){
         /* Para arquivos estáticos precisamos saber qual content-type e qual rota chamou.

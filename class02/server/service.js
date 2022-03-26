@@ -36,9 +36,9 @@ export class Service {
         this.throttleTransform = {};
         this.currentReadable = {};
 
-        // temporário
-        // assim q alguém der new no Service já inicializamos p verificar se está funcionando
-        this.startStream();
+        // // temporário
+        // // assim q alguém der new no Service já inicializamos p verificar se está funcionando
+        // this.startStreamming();
     }
     createClientStream(){
         const id = randomUUID();
@@ -100,7 +100,7 @@ export class Service {
             return fallBackBitRate;
         }
     }
-
+    // Envia notificação para clientes
     broadcast(){
         return new Writable({
             // Passar arrow function para herdar o contexto
@@ -119,7 +119,7 @@ export class Service {
         });
     }
     /* Com a info de bitRate podemos ver o quanto vai ser enviado para o cliente */
-    async startStream(){
+    async startStreamming(){
         // Inicializar a stream
         logger.info(`starting with ${this.currentSong}`);
         // 128k é muito grande, então dividimos  
@@ -138,7 +138,9 @@ export class Service {
             this.broadcast(), // stream de saída
         );
     }
-
+    stopStreamming(){
+        this.throttleTransform?.end?.();
+    }
     // Retorna o stream arquivo
     createFileStream(filename){
         return fs.createReadStream(filename)

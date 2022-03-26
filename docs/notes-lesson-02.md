@@ -10,7 +10,7 @@
 - Tests:
   - O som toca uma vez, depois não toca mais. somente reiniciando o live-reload.
 
-1h10m ...Executando som no browser
+1h12m ...iniciando teste e2e
 
 ## Project Startup 🚧
 

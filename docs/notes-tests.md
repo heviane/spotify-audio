@@ -27,6 +27,11 @@ Não fizemos TDD, porque fizemos os testes depois das implementações.
     ## POST
     curl -X POST -i localhost:3000 # header
     curl -X POST localhost:3000    # body
+
+    # Testes da aula 02
+    curl -X POST localhost:3000/controller -d '{"command":"start"}'
+    curl -i -X POST localhost:3000/controller -d '{"command":"start"}'
+    curl -i -X POST localhost:3000/controller -d '{"command":"stop"}'
 ```
 
 ## Debugging

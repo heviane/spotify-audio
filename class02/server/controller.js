@@ -13,6 +13,21 @@ export class Controller {
     async getFileStream(filename){
         return this.service.getFileStream(filename);
     }
+    // Inicializar o stream
+    async handleCommand({command}){
+        logger.info(`Command received: ${command}`);
+        const cmd = command.toLowerCase();
+        const result = { result: 'ok'}
+        if(cmd.includes('start')){
+            this.service.startStreamming();
+            return result
+        }
+        if(cmd.includes('stop')){
+            this.service.stopStreamming();
+            return result
+        }
+    }
+
     createClientStream(){
         // Pegamos da service.js, próximo rota é routes.js
         const {id, clientStream} = this.service.createClientStream();
