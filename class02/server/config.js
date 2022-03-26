@@ -21,6 +21,7 @@ const currenteDir = dirname(fileURLToPath(import.meta.url)); // server
 const root  = join(currenteDir, '../'); // pasta raiz do projeto
 const audioDir  = join(root, 'audio');  // pasta de audio
 const publicDir = join(root, 'public'); // pasta de public
+const songsDir = join(audioDir, 'songs'); // pasta dos audios
 
 // expor
 export default {
@@ -29,7 +30,7 @@ export default {
         root,
         publicDir,
         audioDir,
-        songsDir: join(audioDir, 'songs'), // audio/songs
+        songsDir: songsDir,// audio/songs
         fxDir: join(audioDir, 'fx'), // audio/fx
     },
     // Não normalizado para pegar de forma dinâmica sem dificuldade
@@ -47,6 +48,11 @@ export default {
         '.html': 'text/html',
         '.css': 'text/css',
         '.js': 'text/javascript',
-      }
+      },
+      audioMediaType: 'mp3',
+      songVolume: '0.99',
+      fallBackBitRate: '128000', // 128k 
+      bitRateDivisor: 8, // 8 bits
+      englishConversation: join(songsDir, 'conversation.mp3'),
     }
 };

@@ -1,0 +1,30 @@
+version: '2.1'
+services: 
+  live-reload:
+    # Definir uma imagem para o serviço "live-reload"
+    image: spotify-radio
+    # Definir aonde está o "Dockerfile", apenas ponto (.) porque está no mesmo diretório
+    build: .
+    environment:
+      # Definir a mesma porta do "config.js"
+      PORT: 3000
+    # Substituir o "CMD" que está no "Dockerfile"
+    command:
+      - npm
+      - run
+      - live-reload
+    # IMPORTANT: Separar "node_modules" do "código" usando volumes para rodar o live-reload!
+    ## Assim, podemos configurar o docker para ficar monitorando somente o código
+    volumes:
+      ### Pegar os arquivos (codificação) e jogar para dentro da imagem
+      - .:/spotify-radio  
+      ### Configurar externamente, para poder chamar se precisar
+      - node_modules:/spotify-radio/node_modules
+    # Definir exposição para a internet
+    ## Exportamos para a internet na porta 3000 (deploy) do environment 3000 (localhost)
+    ports:
+      - 3000:3000
+
+# Definir "node_modules" externamente ao service
+volumes:
+  node_modules: {}

@@ -25,9 +25,12 @@ O layout é ficticio, será implementado apenas o player.
 ## Requeriments ✅
 
 - [Node](https://nodejs.org)
+- [Node Streams](https://nodejs.org/dist/latest-v17.x/docs/api/stream.html)
 - [Pino](https://getpino.io)
 - [Jest](https://jestjs.io)
 - [Docker](https://www.docker.com)
+- [SoX - Sound eXchange](http://sox.sourceforge.net)
+- [throttle](https://www.npmjs.com/package/throttle)
 
 ## Project Startup 🚧
 
