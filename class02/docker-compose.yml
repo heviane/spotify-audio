@@ -24,6 +24,40 @@ services:
     ## Exportamos para a internet na porta 3000 (deploy) do environment 3000 (localhost)
     ports:
       - 3000:3000
+  
+  #------------- Testes suíte inteira -----------------
+  test:
+    image: spotify-radio
+    build: .
+    command:
+      - npm
+      - run
+      - test
+    volumes:
+      - .:/spotify-radio  
+      - node_modules:/spotify-radio/node_modules
+
+  test-watch:
+    image: spotify-radio
+    build: .
+    command:
+      - npm
+      - run
+      - test:watch
+    volumes:
+      - .:/spotify-radio  
+      - node_modules:/spotify-radio/node_modules
+
+  test-coverage:
+    image: spotify-radio
+    build: .
+    command:
+      - npm
+      - run
+      - test:coverage
+    volumes:
+      - .:/spotify-radio  
+      - node_modules:/spotify-radio/node_modules
 
 # Definir "node_modules" externamente ao service
 volumes:

@@ -31,6 +31,7 @@ O layout é ficticio, será implementado apenas o player.
 - [Docker](https://www.docker.com)
 - [SoX - Sound eXchange](http://sox.sourceforge.net)
 - [throttle](https://www.npmjs.com/package/throttle)
+- [supertest](https://www.npmjs.com/package/supertest)
 
 ## Project Startup 🚧
 

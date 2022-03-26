@@ -11,26 +11,23 @@ const defaultConfig = {
 }
 
 export default {
-	projects: [
-		// Suíte para Frontend
+	projects: [{
+			...defaultConfig,
+			testEnvironment: "node", // Api do node
+			displayName: "backend", // Suíte para Backend
+			collectCoverageFrom: ["server/","!server/index.js"],
+			TransformIgnorePatterns: [
+				...defaultConfig.TransformIgnorePatterns,"public"],
+			testMath: ["**/tests/**/server/**/*.test.js"]
+		},
 		{
 			...defaultConfig, // Copiar todas as configurações
 			testEnvironment: "jsdom", // Api do browser (window)
-			displayName: "frontend",
+			displayName: "frontend", // Suíte para Frontend
 			collectCoverageFrom: ["public/"],
 			TransformIgnorePatterns: [
-				...defaultConfig.TransformIgnorePatterns,"server/"],
+				...defaultConfig.TransformIgnorePatterns,"server"],
 			testMath: ["**/tests/**/public/**/*.test.js"]
-		},
-		// Suíte para Backend
-		{
-			...defaultConfig,
-			testEnvironment: "node", // Api do node
-			displayName: "backend",
-			collectCoverageFrom: ["server/","!server/index.js"],
-			TransformIgnorePatterns: [
-				...defaultConfig.TransformIgnorePatterns,"public/"],
-			testMath: ["**/tests/**/server/**/*.test.js"]
-		},
+		}
 	]
 };

@@ -9,10 +9,11 @@ Não fizemos TDD, porque fizemos os testes depois das implementações.
 
 ## Types of Tests
 
-- **Unit Test**: Sempre off-line e sem dependências (infraestrutura, internet, SO, BD, App, etc.)
-É um teste realizado do ponto de vista do código.
+- Duas suítes de testes:
 
-- **e2e Test (Integration/Functional)**: Iteração, comunicação entre apps, funcionalidades.
+  - **Unitary**: Sempre off-line e sem dependências (infraestrutura, internet, SO, BD, App, etc). É um teste realizado do ponto de vista do código.
+
+  - **Integration (e2e/Functional)**: Iteração, comunicação entre apps, funcionalidades.
 
 ## Testing from the command line 🚧
 
