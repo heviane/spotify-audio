@@ -10,7 +10,8 @@
 - Tests:
   - O som toca uma vez, depois não toca mais. somente reiniciando o live-reload.
 
-1h32m ...implementação do primeiro todo()
+1h32m...implementação do primeiro test()
+1h39m...implementação do segundo test()
 
 ## Project Startup 🚧
 
