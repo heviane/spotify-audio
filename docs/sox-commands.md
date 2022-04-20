@@ -1,6 +1,6 @@
 # Sox Commands 💻
 
-22min10s...
+- Audio Processing: [SoX - Sound eXchange](http://sox.sourceforge.net)
 
 ## Terminal do container do docker
 

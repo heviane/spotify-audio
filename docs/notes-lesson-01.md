@@ -1,7 +1,7 @@
 # Notes - Lesson 01 📚
 
 - Estruturação do projeto em camadas de forma reutilizável
-- Criaçção do servidor **server.js** e da infraestrutura **index.js**
+- Criação do servidor **server.js** e da infraestrutura **index.js**
 - Criação de entrega estática de de arquivos para o cliente com node streams
 - Criação de tratamento para erros na API
 - Criação de testes unitários com 100% de cobertura para as rotas

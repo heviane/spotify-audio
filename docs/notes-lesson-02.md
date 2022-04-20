@@ -84,7 +84,7 @@
 
 ## [SoX - Sound eXchange](http://sox.sourceforge.net): Audio Processing
 
-É multiplataforma (windows, linux, Mac): Para usar no desenvolvimento, temos que baixar, instalar e configurar para cada uma das plataformas e garantir que funcione corretamente em todas.
+Ferramenta multiplataforma (windows, linux, Mac): Para usar no desenvolvimento, temos que baixar, instalar e configurar para cada uma das plataformas e garantir que funcione corretamente em todas.
 
 Solution (Boa Prática): Toda vez que precisamos usar um **binário externo**, podemos usar o **Docker**, assim garantimos um único ambiente que é portável.
 

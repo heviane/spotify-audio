@@ -1,12 +1,12 @@
 # Spotify Radio - Semana JS Expert 6.0 📻
 
-Seja bem vindo(a) à sexta Semana Javascript Expert. Este é o código inicial para iniciar nossa jornada.
+Repositório criado para acompanhar a [Semana Javascript Expert](https://github.com/ErickWendel/semana-javascript-expert06) com [github.com/ErickWendel](https://github.com/ErickWendel)
 
 Marque esse projeto com uma estrela 🌟
 
 ## Preview
 
-![preview](./prints/demo.png)
+![preview](./class03/prints/demo.png)
 
 ## Checklist Features
 
@@ -41,12 +41,6 @@ Marque esse projeto com uma estrela 🌟
     - [ ] adicionar um botão novo no controlador
     - [ ] adicionar um som de efeito novo para a pasta `audios/fx/`
     - [ ] republicar no heroku
-
-### Considerações
-
-- Tire suas dúvidas sobre os desafios em nossa comunidade, o objetivo é você aprender de forma divertida. Surgiu dúvidas? Pergunte por lá!
-
-- Ao completar qualquer um dos desafios, envie no canal **#desafios** da comunidade no **Discord**
 
 ### Créditos aos áudios usados
 

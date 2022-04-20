@@ -22,18 +22,14 @@
 ```bash
    #!/bin/bash
 
-  # Rodar os testes
+  # Run the tests
   npm test
-  ## FAIL: tests/e2e/server/api.test.js
-  ## ● API E2E Suite Test › client workflow › it should receive data stream if the process is playing
-  ## spawn sox ENOENT
-  ## *** Because you don't have sox installed on the machine ***
-  ## *** It's installed in the docker container
+    ## Failed, Because you don't have sox installed on the machine
 
-  # Rodar os testes via Docker porque o sox está instalado somente lá
+  # Sox is installed in the docker container
   npm run test:docker
 
-  # executar o projeto
+  # Run the project
   npm run live-reload:docker
 ```
 
@@ -49,6 +45,6 @@
   - Demais vezes: NÃO
     - Somente após clicar em start na página controller p/ enviar stream novamente.
 
-## [Heroku](https://www.heroku.com)
+## Deploy to [Heroku](https://www.heroku.com)
 
 ## References ✅

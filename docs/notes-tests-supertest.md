@@ -32,5 +32,3 @@
     # Executar testes
     npm run test:watch:docker
 ```
-
-## References ✅
