@@ -8,23 +8,32 @@ Frontend e Backend dentro do mesmo projeto.
 
 ## Frontend 😮
 
-- [public directory](./public/)
+- [public directory](../class03/public/)
 
 A API do frontend é a api do browser, que é **"window"**.
 
-- **assets**: Diretório para artefatos estáticos.
-- **css**: Diretório para estilos.
-- **js**: Diretório para scripts.
-- **index.html**: Main, arquivo de entrada.
 - Divisão em diretórios por responsabilidades:
   - **controller**: Page para manipular os audios.
+    - **index.html**: Main, arquivo de entrada.
+    - **assets**: Diretório para artefatos estáticos.
+    - **css**: Diretório para estilos.
+    - **js**: Diretório para scripts.
+      - **view.js**: Apresentação das telas, visualização (elementos HTML).
+      - **service.js**: Regras de negócio.
+      - **controller.js**: Controlador (intermediário) entre views e services.
+      - **index.js**: Factory, inicializa tudo. É um padrão de projeto bem conhecido.
+
   - **home**: Page principal, tela de usuário para player.
+    - **index.html**: Main, arquivo de entrada.
+    - **assets**: Diretório para artefatos estáticos.
+    - **css**: Diretório para estilos.
+    - **js**: Diretório para scripts.
 
 ## Backend 🧰
 
 A API do backend é a api do **node**.
 
-- [server directory](./server/)
+- [server directory](../class03/server/)
 
 - **server.js**: Cria o servidor, mas não instância.
 - **index.js**: Instância o servidor e expõe na web (infraestrutura).
@@ -38,3 +47,10 @@ O cliente vai interagir com a API, as rotas a partir do arquivo de rotas, que va
 - **util.js**: Exportar o log (lib pino) para reutilização.
 - **config**: Tudo que for estático do projeto.
 Ex: string sensível, estrutura do frontend, etc.
+
+## Tests 🧪
+
+- [tests directory](../class03/tests/)
+
+- **Suítes**: e2e e unit.
+- **Camadas**: public e server.
